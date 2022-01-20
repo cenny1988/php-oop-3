@@ -69,7 +69,7 @@ class Computer{
     }
     public function setPrezzo($prezzo){
     // - prezzo: deve essere un valore intero compreso tra 0 e 2000
-        if( ($prezzo<0) || ($prezzo>2000) ){
+        if( !is_int($prezzo) || ($prezzo<0) || ($prezzo>2000) ){
             throw new Exception("Prezzo errato!");
         }
         $this -> prezzo = $prezzo;
